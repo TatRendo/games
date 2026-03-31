@@ -1,0 +1,25 @@
+body {
+  font-family: Arial, sans-serif;
+  background: url("assets/fondo1.jpg") no-repeat center center fixed;
+  background-size: cover;
+  color: white;
+  text-align: center;
+}
+
+.hidden {
+  display: none;
+}
+
+#character {
+  margin: 20px;
+}
+
+#character img {
+  width: 200px;
+}
+
+button {
+  padding: 10px 20px;
+  margin: 10px;
+  cursor: pointer;
+}

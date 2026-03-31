@@ -1,0 +1,37 @@
+[
+  {
+    "text": "Pregunta 1: ¿Cuál es la capital de Colombia?",
+    "options": [
+      {"text": "Bogotá", "correct": true},
+      {"text": "Medellín", "correct": false}
+    ]
+  },
+  {
+    "text": "Pregunta 2: ¿Ya nos sigues en Instagram?",
+    "options": [
+      {"text": "Sí", "correct": true, "link": "https://instagram.com/metaclor"},
+      {"text": "No", "correct": false}
+    ]
+  },
+  {
+    "text": "Pregunta 3: ¿Cuál es 2+2?",
+    "options": [
+      {"text": "4", "correct": true},
+      {"text": "5", "correct": false}
+    ]
+  },
+  {
+    "text": "Pregunta 4: ¿Ya nos sigues en Facebook?",
+    "options": [
+      {"text": "Sí", "correct": true, "link": "https://facebook.com/metaclor"},
+      {"text": "No", "correct": false}
+    ]
+  },
+  {
+    "text": "Pregunta 5: ¿Cuál es el océano más grande?",
+    "options": [
+      {"text": "Pacífico", "correct": true},
+      {"text": "Atlántico", "correct": false}
+    ]
+  }
+]

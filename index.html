@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Juego Narrativo</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="game-container">
+    <div id="start-screen">
+      <h1>Bienvenido al cuento interactivo</h1>
+      <input type="text" id="player-name" placeholder="Ingresa tu nombre">
+      <button onclick="startGame()">Comenzar</button>
+    </div>
+
+    <div id="question-screen" class="hidden">
+      <div id="character">
+        <img id="character-img" src="assets/personaje.png" alt="Personaje">
+        <p id="dialogue"></p>
+      </div>
+      <div id="options"></div>
+    </div>
+
+    <div id="end-screen" class="hidden">
+      <h2 id="final-message"></h2>
+      <p id="score"></p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
