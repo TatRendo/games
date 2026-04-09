@@ -1,25 +1,131 @@
+/* Estilo general */
 body {
   font-family: Arial, sans-serif;
   background: url("assets/fondo1.jpg") no-repeat center center fixed;
   background-size: cover;
   color: white;
   text-align: center;
+  margin: 0;
+  padding: 0;
 }
 
+/* Contenedor principal */
+#game-container {
+  max-width: 400px; /* tamaño ideal para celular */
+  margin: auto;
+  padding: 10px;
+}
+
+/* Ocultar pantallas */
 .hidden {
   display: none;
 }
 
+/* Botones */
+button {
+  padding: 12px;
+  margin: 8px 0;
+  width: 90%;
+  font-size: 1em;
+  border: none;
+  border-radius: 8px;
+  background-color: #4CAF50;
+  color: white;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+/* Inputs */
+input[type="text"] {
+  padding: 10px;
+  width: 80%;
+  margin: 10px 0;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 1em;
+}
+
+/* Personaje / escenografía */
 #character {
   margin: 20px;
 }
 
 #character img {
-  width: 200px;
+  width: 100%;
+  max-width: 250px;
+  border-radius: 10px;
 }
 
-button {
-  padding: 10px 20px;
-  margin: 10px;
+/* Opciones */
+#options {
+  margin-top: 20px;
+}
+
+/* Pantalla final */
+#end-screen h2 {
+  font-size: 1.5em;
+  margin-bottom: 20px;
+}
+
+#score {
+  font-size: 3em; /* Puntaje grande en el centro */
+  font-weight: bold;
+}
+
+/* Pop-ups flotantes */
+.popup {
+  position: fixed;
+  top: 25%;
+  left: 25%;
+  width: 50%;
+  height: 50%;
+  background: rgba(0,0,0,0.85);
+  color: white;
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 12px;
+}
+
+.popup-content {
+  position: relative;
+  background: #222;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.popup .close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
   cursor: pointer;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+/* Responsivo para celular */
+@media only screen and (max-width: 600px) {
+  #game-container {
+    max-width: 95%;
+  }
+
+  button {
+    font-size: 1.1em;
+  }
+
+  #score {
+    font-size: 2.5em;
+  }
+
+  .popup {
+    top: 20%;
+    left: 10%;
+    width: 80%;
+    height: 50%;
+  }
 }

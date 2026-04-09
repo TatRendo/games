@@ -1,37 +1,74 @@
 [
-  {
-    "text": "Pregunta 1: ¿Cuál es la capital de Colombia?",
-    "options": [
-      {"text": "Bogotá", "correct": true},
-      {"text": "Medellín", "correct": false}
-    ]
-  },
-  {
-    "text": "Pregunta 2: ¿Ya nos sigues en Instagram?",
-    "options": [
-      {"text": "Sí", "correct": true, "link": "https://instagram.com/metaclor"},
-      {"text": "No", "correct": false}
-    ]
-  },
-  {
-    "text": "Pregunta 3: ¿Cuál es 2+2?",
-    "options": [
-      {"text": "4", "correct": true},
-      {"text": "5", "correct": false}
-    ]
-  },
-  {
-    "text": "Pregunta 4: ¿Ya nos sigues en Facebook?",
-    "options": [
-      {"text": "Sí", "correct": true, "link": "https://facebook.com/metaclor"},
-      {"text": "No", "correct": false}
-    ]
-  },
-  {
-    "text": "Pregunta 5: ¿Cuál es el océano más grande?",
-    "options": [
-      {"text": "Pacífico", "correct": true},
-      {"text": "Atlántico", "correct": false}
-    ]
-  }
+  { "text": "Pregunta 1: ¿Cuál es la capital de Colombia?", "options": [
+    {"text": "Bogotá", "correct": true},
+    {"text": "Medellín", "correct": false},
+    {"text": "Cali", "correct": false}
+  ]},
+  { "text": "Pregunta 2: ¿Cuál es 2+2?", "options": [
+    {"text": "3", "correct": false},
+    {"text": "4", "correct": true},
+    {"text": "5", "correct": false}
+  ]},
+  { "text": "Pregunta 3: ¿Cuál es el océano más grande?", "options": [
+    {"text": "Atlántico", "correct": false},
+    {"text": "Pacífico", "correct": true},
+    {"text": "Índico", "correct": false}
+  ]},
+  { "text": "Pregunta 4: ¿Ya sigues nuestra cuenta oficial de Metaclor en Instagram?", "options": [
+    {"text": "Sí", "correct": true},
+    {"text": "No", "correct": false, "link": "https://instagram.com/metaclor"}
+  ]},
+  { "text": "Pregunta 5: ¿Cuál es el planeta más cercano al sol?", "options": [
+    {"text": "Mercurio", "correct": true},
+    {"text": "Venus", "correct": false},
+    {"text": "Marte", "correct": false}
+  ]},
+  { "text": "Pregunta 6: ¿Cuál es el río más largo del mundo?", "options": [
+    {"text": "Amazonas", "correct": true},
+    {"text": "Nilo", "correct": false},
+    {"text": "Yangtsé", "correct": false}
+  ]},
+  { "text": "Pregunta 7: ¿Cuál es el animal terrestre más rápido?", "options": [
+    {"text": "León", "correct": false},
+    {"text": "Guepardo", "correct": true},
+    {"text": "Caballo", "correct": false}
+  ]},
+  { "text": "Pregunta 8: ¿Cuál es el metal más ligero?", "options": [
+    {"text": "Hierro", "correct": false},
+    {"text": "Litio", "correct": true},
+    {"text": "Aluminio", "correct": false}
+  ]},
+  { "text": "Pregunta 9: ¿Ya sigues nuestra cuenta oficial de Metatitane en Instagram?", "options": [
+    {"text": "Sí", "correct": true},
+    {"text": "No", "correct": false, "link": "https://instagram.com/metatitane"}
+  ]},
+  { "text": "Pregunta 10: ¿Cuál es el continente con más países?", "options": [
+    {"text": "África", "correct": true},
+    {"text": "Asia", "correct": false},
+    {"text": "Europa", "correct": false}
+  ]},
+  { "text": "Pregunta 11: ¿Cuál es el idioma más hablado en el mundo?", "options": [
+    {"text": "Inglés", "correct": false},
+    {"text": "Mandarín", "correct": true},
+    {"text": "Español", "correct": false}
+  ]},
+  { "text": "Pregunta 12: ¿Cuál es el país más grande del mundo?", "options": [
+    {"text": "China", "correct": false},
+    {"text": "Rusia", "correct": true},
+    {"text": "Canadá", "correct": false}
+  ]},
+  { "text": "Pregunta 13: ¿Ya sigues nuestra página oficial del Laboratorio en Facebook?", "options": [
+    {"text": "Sí", "correct": true},
+    {"text": "No", "correct": false, "link": "https://facebook.com/laboratorio"}
+  ]},
+  { "text": "Pregunta 14: ¿Cuál es el país con más población?", "options": [
+    {"text": "India", "correct": true},
+    {"text": "China", "correct": false},
+    {"text": "EE.UU.", "correct": false}
+  ]},
+  { "text": "Pregunta 15: ¿Cuál es el continente más pequeño?", "options": [
+    {"text": "Oceanía", "correct": true},
+    {"text": "Europa", "correct": false},
+    {"text": "Antártida", "correct": false}
+  ]}
 ]

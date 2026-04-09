@@ -7,24 +7,38 @@
 </head>
 <body>
   <div id="game-container">
-    <div id="start-screen">
-      <h1>Bienvenido al cuento interactivo</h1>
-      <input type="text" id="player-name" placeholder="Ingresa tu nombre">
-      <button onclick="startGame()">Comenzar</button>
+
+    <!-- Pantalla de bienvenida -->
+    <div id="welcome-screen">
+      <h1>Bienvenido al juego interactivo</h1>
+      <!-- Aquí puedes poner tu imagen de bienvenida -->
+      <img src="assets/bienvenida.jpg" alt="Bienvenida" style="width:100%;">
+      <button onclick="startGame()">Iniciar</button>
     </div>
 
+    <!-- Pantalla para ingresar nombre -->
+    <div id="name-screen" class="hidden">
+      <h2>Ingresa tu nombre para comenzar</h2>
+      <input type="text" id="player-name" placeholder="Tu nombre">
+      <button onclick="beginQuestions()">Comenzar</button>
+    </div>
+
+    <!-- Pantalla de preguntas -->
     <div id="question-screen" class="hidden">
       <div id="character">
+        <!-- Aquí puedes poner escenografía diferente por pregunta -->
         <img id="character-img" src="assets/personaje.png" alt="Personaje">
         <p id="dialogue"></p>
       </div>
       <div id="options"></div>
     </div>
 
+    <!-- Pantalla final -->
     <div id="end-screen" class="hidden">
       <h2 id="final-message"></h2>
       <p id="score"></p>
     </div>
+
   </div>
 
   <script src="script.js"></script>
