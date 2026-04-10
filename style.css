@@ -134,8 +134,8 @@ input[type="text"] {
 #welcome-screen {
   position: relative;
   width: 100%;
+  height: 100vh; /* ocupa toda la pantalla */
   overflow: hidden;
-  max-width: none; /* evita que se limite a 400px */
 }
 
 #intro-image {
@@ -151,14 +151,14 @@ input[type="text"] {
 /* Botón de inicio posicionado en la imagen */
 #start-button {
   position: absolute;   /* se coloca encima de la imagen */
-  bottom: 75%;          /* con esto ajusto ubicacion */
+  bottom: 25%;          /* con esto ajusto ubicacion */
   left: 50%;            /* con esto ajusto ubicacion */
   transform: translate(-50%, -50%);
   z-index: 10;          /* asegura que esté encima de la imagen */
 
-  width: auto;
-  min-width: 120px;
-  padding: 12px 24px;
+  /*width: auto;*/
+  min-width: 140px;
+  padding: 14px 28px;
   font-size: 1.2em;
   background: #e19316;
   border: none;
@@ -169,6 +169,15 @@ input[type="text"] {
 
 #start-button:hover {
   background-color: #45a049;
+}
+
+/* Ajuste para pantallas pequeñas (celular) */
+@media only screen and (max-width: 600px) {
+  #start-button {
+    bottom: 30%;       /* sube un poco en móviles para que no quede demasiado abajo */
+    font-size: 1em;
+    padding: 12px 22px;
+  }
 }
 
 #question-screen,
