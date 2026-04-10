@@ -134,8 +134,8 @@ input[type="text"] {
 #welcome-screen {
   position: relative;
   width: 100%;
-  height: 100vh; /* ocupa toda la pantalla */
   overflow: hidden;
+  max-width: none; /* evita que se limite a 400px */
 }
 
 #intro-image {
