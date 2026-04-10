@@ -18,7 +18,7 @@ function startGame() {
   document.getElementById("welcome-screen").classList.add("hidden");
   document.getElementById("name-screen").classList.remove("hidden");
 
-  // ✅ Fondo especial para la pantalla de nombre
+  // ✅ Fondo especial para la pantalla de nombre osea donde ingresa el nombre 😅
   document.getElementById("name-screen").style.backgroundImage = 'url("assets/usuario.png")';
   document.getElementById("name-screen").style.backgroundSize = "cover";
   document.getElementById("name-screen").style.backgroundPosition = "center";
@@ -60,7 +60,7 @@ function showQuestion() {
 
   const q = questions[currentQuestion];
 
-  // ✅ Cambiar fondo según la pregunta actual
+  // ✅ Cambiar fondo según la pregunta actual 🤞🏻
   document.getElementById("question-screen").style.backgroundImage = `url("assets/fondo${currentQuestion + 1}.jpg")`;
   document.getElementById("question-screen").style.backgroundSize = "cover";
   document.getElementById("question-screen").style.backgroundPosition = "center";
@@ -132,10 +132,10 @@ function endGame() {
   let percentage = Math.round((score / (questions.length * 6.67)) * 100);
   let message = "";
 
-  if (percentage <= 50) message = "Por poco mueres en una dimensión...";
+  if (percentage <= 50) message = "Por poco mueres... ¡Inténtalo de nuevo!";
   else if (percentage <= 70) message = "Has sobrevivido, pero con dificultad...";
-  else if (percentage <= 90) message = "Eres un gran influencer...";
-  else message = "¡Eres nuestro influencer más importante!";
+  else if (percentage <= 90) message = "Eres un gran jugador...";
+  else message = "¡Eres nuestro jugador más importante!";
 
   document.getElementById("final-message").innerText = message;
   document.getElementById("score").innerText = `${playerName}, tu puntaje final es ${percentage}`;

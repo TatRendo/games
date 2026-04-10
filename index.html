@@ -8,7 +8,7 @@
 <body>
   <div id="game-container">
 
-    <!-- Pantalla de bienvenida -->
+    <!-- Pantalla 1: bienvenida -->
 <div id="welcome-screen">
   <img src="assets/bienvenidos.png" alt="Bienvenida" id="intro-image">
   <!-- <h1>Bienvenido al juego interactivo</h1>--->
@@ -16,14 +16,14 @@
   <button id="start-button" onclick="startGame()">Iniciar</button>
 </div>
 
-    <!-- Pantalla para ingresar nombre -->
+    <!-- Pantalla 2: ingresar nombre -->
     <div id="name-screen" class="hidden">
       <h2>Ingresa tu nombre para comenzar</h2>
       <input type="text" id="player-name" placeholder="Tu nombre">
       <button onclick="beginQuestions()">Comenzar</button>
     </div>
 
-    <!-- Pantalla de preguntas -->
+    <!-- Pantallas de las preguntas -->
     <div id="question-screen" class="hidden">
       <div id="character">
         <!-- Aquí escenografía diferente por pregunta -->
