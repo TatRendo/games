@@ -21,7 +21,7 @@ body {
   display: none;
 }
 
-/* Botones */
+/* Botones generales */
 button {
   padding: 12px;
   margin: 8px 0;
@@ -129,3 +129,87 @@ input[type="text"] {
     height: 50%;
   }
 }
+
+/* Pantalla de bienvenida con imagen */
+#welcome-screen {
+  position: relative;
+  width: 100%;
+  height: 100vh; /* ocupa toda la pantalla */
+  overflow: hidden;
+}
+
+#intro-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* la imagen se ajusta sin deformarse */
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1; /* queda detrás del botón */
+}
+
+/* Botón de inicio posicionado en la imagen */
+#start-button {
+  position: absolute;   /* se coloca encima de la imagen */
+  bottom: 75%;          /* tu medida exacta */
+  left: 50%;            /* tu medida exacta */
+  transform: translate(-50%, -50%);
+  z-index: 10;          /* asegura que esté encima de la imagen */
+
+  width: auto;
+  min-width: 120px;
+  padding: 12px 24px;
+  font-size: 1.2em;
+  background: #e19316;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  cursor: pointer;
+}
+
+#start-button:hover {
+  background-color: #45a049;
+}
+
+#question-screen,
+#end-screen {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+#name-screen {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+
+
+/* Fondos diferentes para cada pantalla 
+#welcome-screen {
+  background: url("assets/fondo1.jpg") no-repeat center center fixed;
+  background-size: cover;
+}
+
+#name-screen {
+  background: url("assets/fondo2.jpg") no-repeat center center fixed;
+  background-size: cover;
+}
+
+#question-screen {
+  background: url("assets/fondo3.jpg") no-repeat center center fixed;
+  background-size: cover;
+}
+
+#end-screen {
+  background: url("assets/fondo4.jpg") no-repeat center center fixed;
+  background-size: cover;
+}
+*/

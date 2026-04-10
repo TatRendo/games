@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Panel Administrador</title>
+  <link rel="stylesheet" href="style-admin.css">
+</head>
+<body>
+  <div class="admin-container">
+    <h1>Panel de Control - Juego</h1>
+    <p>Aquí verás los jugadores y sus resultados en tiempo real</p>
+
+    <!-- Tabla de resultados -->
+    <table class="admin-table">
+      <thead>
+        <tr>
+          <th>Nombre</th>
+          <th>Puntaje (%)</th>
+          <th>Pregunta actual</th>
+        </tr>
+      </thead>
+      <tbody id="results-body">
+        <!-- Se llenará dinámicamente -->
+      </tbody>
+    </table>
+
+    <!-- Botones de administración -->
+    <div class="admin-buttons">
+      <button onclick="downloadResults()">Descargar resultados</button>
+      <button onclick="clearResults()">Borrar resultados</button>
+    </div>
+  </div>
+
+  <script src="admin.js"></script>
+</body>
+</html>

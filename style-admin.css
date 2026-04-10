@@ -1,0 +1,67 @@
+/* Panel administrador - estilos exclusivos */
+.admin-container {
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 20px;
+  background: rgba(0,0,0,0.7);
+  border-radius: 12px;
+  color: white;
+  text-align: center;
+}
+
+.admin-container h1 {
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+
+.admin-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  background: #333;
+  color: white;
+}
+
+.admin-table th, .admin-table td {
+  padding: 12px;
+  border: 1px solid #555;
+}
+
+.admin-table th {
+  background: #444;
+  font-size: 1.1em;
+}
+
+.admin-table tr:nth-child(even) {
+  background: #3a3a3a;
+}
+
+.admin-table tr:hover {
+  background: #555;
+}
+
+.admin-buttons button {
+  padding: 12px 20px;
+  margin: 10px;
+  font-size: 1em;
+  border: none;
+  border-radius: 8px;
+  background-color: #2196F3;
+  color: white;
+  cursor: pointer;
+}
+
+.admin-buttons button:hover {
+  background-color: #1976D2;
+}
+
+/* Responsivo para pantallas grandes */
+@media only screen and (min-width: 1024px) {
+  .admin-container {
+    max-width: 1200px;
+  }
+
+  .admin-table th, .admin-table td {
+    font-size: 1.1em;
+  }
+}

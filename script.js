@@ -3,21 +3,39 @@ let currentQuestion = 0;
 let score = 0;
 let playerName = "";
 
+// ✅ Cargar preguntas desde questions.json al inicio
 async function loadQuestions() {
-  const response = await fetch("questions.json");
-  questions = await response.json();
+  try {
+    const response = await fetch("questions.json");
+    questions = await response.json();
+    console.log("Preguntas cargadas:", questions); // Verifica en consola
+  } catch (error) {
+    console.error("Error cargando preguntas:", error);
+  }
 }
 
 function startGame() {
   document.getElementById("welcome-screen").classList.add("hidden");
   document.getElementById("name-screen").classList.remove("hidden");
+
+  // ✅ Fondo especial para la pantalla de nombre
+  document.getElementById("name-screen").style.backgroundImage = 'url("assets/usuario.png")';
+  document.getElementById("name-screen").style.backgroundSize = "cover";
+  document.getElementById("name-screen").style.backgroundPosition = "center";
 }
 
-function beginQuestions() {
+// ✅ Iniciar juego sin guardar duplicados
+async function beginQuestions() {
   playerName = document.getElementById("player-name").value;
-  localStorage.setItem("playerName", playerName);
+
   document.getElementById("name-screen").classList.add("hidden");
   document.getElementById("question-screen").classList.remove("hidden");
+
+  // Si aún no se han cargado las preguntas, espera
+  if (questions.length === 0) {
+    await loadQuestions();
+  }
+
   showQuestion();
 }
 
@@ -28,7 +46,6 @@ function showPopup(message, type="mal") {
     <div class="popup-content">
       <span class="close">&times;</span>
       <p>${message}</p>
-      <!-- Aquí puedes poner <img src="assets/${type}.png"> o <video src="assets/${type}.mp4" controls></video> -->
     </div>
   `;
   document.body.appendChild(popup);
@@ -42,6 +59,12 @@ function showQuestion() {
   }
 
   const q = questions[currentQuestion];
+
+  // ✅ Cambiar fondo según la pregunta actual
+  document.getElementById("question-screen").style.backgroundImage = `url("assets/fondo${currentQuestion + 1}.jpg")`;
+  document.getElementById("question-screen").style.backgroundSize = "cover";
+  document.getElementById("question-screen").style.backgroundPosition = "center";
+
   document.getElementById("dialogue").innerText = q.text;
   const optionsDiv = document.getElementById("options");
   optionsDiv.innerHTML = "";
@@ -61,6 +84,21 @@ function showQuestion() {
       }
 
       currentQuestion++;
+
+      // ✅ Guardar progreso parcial en localStorage
+      let partialPercentage = Math.round((score / (questions.length * 6.67)) * 100);
+      let results = JSON.parse(localStorage.getItem("gameResults")) || [];
+
+      // Buscar si ya existe un registro para este jugador
+      let existing = results.find(r => r.name === playerName);
+      if (existing) {
+        existing.score = partialPercentage;
+        existing.question = currentQuestion;
+      } else {
+        results.push({ name: playerName, score: partialPercentage, question: currentQuestion });
+      }
+
+      localStorage.setItem("gameResults", JSON.stringify(results));
 
       // Pop-ups en preguntas específicas
       if (currentQuestion === 5 && score < 20) {
@@ -86,6 +124,11 @@ function endGame() {
   document.getElementById("question-screen").classList.add("hidden");
   document.getElementById("end-screen").classList.remove("hidden");
 
+  // ✅ Fondo especial para el resultado
+  document.getElementById("end-screen").style.backgroundImage = 'url("assets/fondoFinal.jpg")';
+  document.getElementById("end-screen").style.backgroundSize = "cover";
+  document.getElementById("end-screen").style.backgroundPosition = "center";
+
   let percentage = Math.round((score / (questions.length * 6.67)) * 100);
   let message = "";
 
@@ -96,7 +139,19 @@ function endGame() {
 
   document.getElementById("final-message").innerText = message;
   document.getElementById("score").innerText = `${playerName}, tu puntaje final es ${percentage}`;
-  document.getElementById("score").style.fontSize = "3em"; // Puntaje grande en el centro
+  document.getElementById("score").style.fontSize = "3em";
+
+  // ✅ Guardar resultado final para administrador
+  let results = JSON.parse(localStorage.getItem("gameResults")) || [];
+  let existing = results.find(r => r.name === playerName);
+  if (existing) {
+    existing.score = percentage;
+    existing.question = currentQuestion;
+  } else {
+    results.push({ name: playerName, score: percentage, question: currentQuestion });
+  }
+  localStorage.setItem("gameResults", JSON.stringify(results));
 }
 
+// ✅ Llamar a la carga inicial de preguntas
 loadQuestions();

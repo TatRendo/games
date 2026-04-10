@@ -59,7 +59,7 @@
   ]},
   { "text": "Pregunta 13: ¿Ya sigues nuestra página oficial del Laboratorio en Facebook?", "options": [
     {"text": "Sí", "correct": true},
-    {"text": "No", "correct": false, "link": "https://facebook.com/laboratorio"}
+    {"text": "No", "correct": false, "link": "https://www.facebook.com/LaboratoriosRemo?rdid=DPT8CkObDueB5OLb&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1C9VvVDytS%2F#"}
   ]},
   { "text": "Pregunta 14: ¿Cuál es el país con más población?", "options": [
     {"text": "India", "correct": true},
