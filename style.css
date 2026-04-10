@@ -1,4 +1,4 @@
-/* Estilo general */
+/* 🎨 Estilo general */
 body {
   font-family: Arial, sans-serif;
   background: url("assets/fondo1.jpg") no-repeat center center fixed;
@@ -9,10 +9,11 @@ body {
   padding: 0;
 }
 
-/* Contenedor principal */
+/* 📱 Contenedor principal */
 #game-container {
-  max-width: 400px; /* tamaño ideal para celular */
-  margin: auto;
+  width: 100%;
+  max-width: 100%;   /* ocupa todo el ancho en móvil */
+  margin: 0 auto;
   padding: 10px;
 }
 
@@ -21,11 +22,12 @@ body {
   display: none;
 }
 
-/* Botones generales */
+/* 🔘 Botones generales */
 button {
   padding: 12px;
   margin: 8px 0;
   width: 90%;
+  max-width: 300px;
   font-size: 1em;
   border: none;
   border-radius: 8px;
@@ -38,24 +40,26 @@ button:hover {
   background-color: #45a049;
 }
 
-/* Inputs */
+/* ✏️ Inputs */
 input[type="text"] {
   padding: 10px;
-  width: 80%;
+  width: 90%;
+  max-width: 300px;
   margin: 10px 0;
   border-radius: 6px;
   border: 1px solid #ccc;
   font-size: 1em;
 }
 
-/* Personaje / escenografía */
+/* 🦝 Personaje / escenografía */
 #character {
   margin: 20px;
 }
 
 #character img {
-  width: 100%;
-  max-width: 250px;
+  width: 80%;
+  max-width: 200px;
+  height: auto;
   border-radius: 10px;
 }
 
@@ -64,7 +68,7 @@ input[type="text"] {
   margin-top: 20px;
 }
 
-/* Pantalla final */
+/* 🏁 Pantalla final */
 #end-screen h2 {
   font-size: 1.5em;
   margin-bottom: 20px;
@@ -75,7 +79,7 @@ input[type="text"] {
   font-weight: bold;
 }
 
-/* Pop-ups flotantes */
+/* 📌 Pop-ups flotantes */
 .popup {
   position: fixed;
   top: 25%;
@@ -108,7 +112,7 @@ input[type="text"] {
   font-weight: bold;
 }
 
-/* Responsivo para celular */
+/* 📱 Responsivo para celular */
 @media only screen and (max-width: 600px) {
   #game-container {
     max-width: 95%;
@@ -128,13 +132,19 @@ input[type="text"] {
     width: 80%;
     height: 50%;
   }
+
+  #character img {
+    width: 90%;
+    max-width: 180px;
+  }
 }
 
-/* Pantalla de bienvenida con imagen */
+/* 🎬 Pantalla de bienvenida con imagen */
 #welcome-screen {
   position: relative;
   width: 100%;
   height: 100vh; /* ocupa toda la pantalla */
+  max-width: none; /* evita que se limite a 400px */
   overflow: hidden;
 }
 
@@ -148,15 +158,14 @@ input[type="text"] {
   z-index: -1; /* queda detrás del botón */
 }
 
-/* Botón de inicio posicionado en la imagen */
+/* 🔘 Botón de inicio posicionado en la imagen */
 #start-button {
   position: absolute;   /* se coloca encima de la imagen */
-  bottom: 25%;          /* con esto ajusto ubicacion */
-  left: 50%;            /* con esto ajusto ubicacion */
-  transform: translate(-50%, -50%);
-  z-index: 10;          /* asegura que esté encima de la imagen */
+  bottom: 25%;          /* ajusta ubicación en pantallas grandes */
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
 
-  /*width: auto;*/
   min-width: 140px;
   padding: 14px 28px;
   font-size: 1.2em;
@@ -168,28 +177,21 @@ input[type="text"] {
 }
 
 #start-button:hover {
-  background-color: #45a049;
+  background-color: #c97c12;
 }
 
-/* Ajuste para pantallas pequeñas (celular) */
+/* Ajuste para celular */
 @media only screen and (max-width: 600px) {
   #start-button {
-    bottom: 30%;       /* sube un poco en móviles para que no quede demasiado abajo */
+    bottom: 30%;       /* sube un poco en móviles */
     font-size: 1em;
     padding: 12px 22px;
   }
 }
 
+/* 📄 Pantallas del juego */
 #question-screen,
-#end-screen {
-  position: relative;
-  width: 100%;
-  min-height: 100vh;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-}
-
+#end-screen,
 #name-screen {
   position: relative;
   width: 100%;
