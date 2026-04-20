@@ -2,7 +2,6 @@ let questions = [];
 let currentQuestion = 0;
 let score = 0;
 let playerName = "";
-let hadBadPopup = false; // ✅ bandera para marcar si hubo algún popup malo
 
 // ✅ Cargar preguntas desde questions.json al inicio
 async function loadQuestions() {
@@ -57,7 +56,7 @@ function showPopup(message, type="mal") {
   popup.innerHTML = `
     <div class="popup-content">
       <span class="close">&times;</span>
-      ${imageSrc ? `<img src="${imageSrc}" alt="${type}" style="width:200px; margin-bottom:15px;">` : ""}
+      ${imageSrc ? `<img src="${imageSrc}" alt="${type}" style="width:120px; margin-bottom:10px;">` : ""}
       <p>${message}</p>
     </div>
   `;
@@ -117,14 +116,12 @@ function showQuestion() {
       // ✅ Pop-ups en preguntas específicas con imágenes
       if (currentQuestion === 5 && score < 30) {
         showPopup("¡Vas muy mal en las primeras preguntas!", "mal");
-        hadBadPopup = true;
       }
       if (currentQuestion === 8) {
         showPopup("¡Vas muy bien!", "bien");
       }
       if (currentQuestion === 10 && score < 100) {
-        showPopup("¡Esta medio mal, mejora!", "mal");
-        hadBadPopup = true;
+        showPopup("¡Todavía vas mal, mejora!", "mal");
       }
       if (currentQuestion === 14) {
         showPopup("¡Excelente progreso!", "bien");
@@ -144,25 +141,19 @@ function endGame() {
   let message = "";
   let fondoFinal = "";
 
-  // ✅ Si tuvo algún popup malo, el resultado no puede ser "excelente"
-  if (hadBadPopup) {
-    message = "Tuviste errores importantes... ¡Inténtalo de nuevo!";
+  // ✅ Fondo y mensaje según resultado
+  if (percentage <= 90) {
+    message = "Por poco mueres... ¡Inténtalo de nuevo!";
     fondoFinal = "assets/fondoFinalMalo.png";
+  } else if (percentage <= 120) {
+    message = "Has sobrevivido, pero con dificultad...";
+    fondoFinal = "assets/fondoFinalMedio.png";
+  } else if (percentage <= 140) {
+    message = "Eres un gran jugador...";
+    fondoFinal = "assets/fondoFinalBueno.png";
   } else {
-    // ✅ Fondo y mensaje según resultado
-    if (percentage <= 90) {
-      message = "Por poco mueres... ¡Inténtalo de nuevo!";
-      fondoFinal = "assets/fondoFinalMalo.png";
-    } else if (percentage <= 120) {
-      message = "Has sobrevivido, pero con dificultad...";
-      fondoFinal = "assets/fondoFinalMedio.png";
-    } else if (percentage <= 140) {
-      message = "Eres un gran jugador...";
-      fondoFinal = "assets/fondoFinalBueno.png";
-    } else {
-      message = "¡Eres nuestro jugador más importante!";
-      fondoFinal = "assets/fondoFinalExcelente.png";
-    }
+    message = "¡Eres nuestro jugador más importante!";
+    fondoFinal = "assets/fondoFinalExcelente.png";
   }
 
   // ✅ Aplicar fondo elegido
