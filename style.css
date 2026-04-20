@@ -7,13 +7,16 @@ body {
   text-align: center;
   margin: 0;
   padding: 0;
+  height: 100vh; /* ocupa toda la pantalla */
+  overflow: hidden; /* evita scroll extra */
 }
 
 /* Contenedor principal */
 #game-container {
-  max-width: 400px; /* tamaño ideal para celular */
-  margin: auto;
-  padding: 10px;
+  width: 100%;
+  height: 100vh; /* ocupa toda la pantalla */
+  margin: 0;
+  padding: 0;
 }
 
 /* Ocultar pantallas */
@@ -25,8 +28,9 @@ body {
 button {
   padding: 12px;
   margin: 8px 0;
-  width: 90%;
-  font-size: 1em;
+  width: 80%;
+  max-width: 300px;
+  font-size: 1.2em;
   border: none;
   border-radius: 8px;
   background-color: #4CAF50;
@@ -59,7 +63,6 @@ input[type="text"] {
   border-radius: 5px;
 }
 
-
 /* Opciones */
 #options {
   margin-top: 20px;
@@ -72,8 +75,9 @@ input[type="text"] {
 }
 
 #score {
-  font-size: 3em; /* Puntaje grande en el centro */
+  font-size: 2.5em;
   font-weight: bold;
+  margin-top: 0;
 }
 
 /* Pop-ups flotantes */
@@ -109,56 +113,42 @@ input[type="text"] {
   font-weight: bold;
 }
 
-
-/* Responsivo para celular */
-@media only screen and (max-width: 600px) {
-  #game-container {
-    max-width: 95%;
-  }
-
-  button {
-    font-size: 1.1em;
-  }
-
-  #score {
-    font-size: 2.5em;
-  }
-
-  .popup {
-    top: 20%;
-    left: 10%;
-    width: 80%;
-    height: 50%;
-  }
-}
-
-/* Pantalla de bienvenida con imagen */
-#welcome-screen {
+/* Pantallas principales: ocupan toda la pantalla */
+#welcome-screen,
+#name-screen,
+#question-screen,
+#end-screen {
   position: relative;
   width: 100%;
   height: 100vh; /* ocupa toda la pantalla */
-  overflow: hidden;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* centra verticalmente */
+  align-items: center;     /* centra horizontalmente */
+  text-align: center;
 }
 
+/* Pantalla de bienvenida con imagen */
 #intro-image {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* la imagen se ajusta sin deformarse */
+  object-fit: cover;
   position: absolute;
   top: 0;
   left: 0;
-  z-index: -1; /* queda detrás del botón */
+  z-index: -1;
 }
 
 /* Botón de inicio posicionado en la imagen */
 #start-button {
-  position: absolute;   /* se coloca encima de la imagen */
-  bottom: 75%;          /* con esto ajusto ubicacion */
-  left: 50%;            /* con esto ajusto ubicacion */
+  position: absolute;
+  bottom: 75%;
+  left: 50%;
   transform: translate(-50%, -50%);
-  z-index: 10;          /* asegura que esté encima de la imagen */
-
-  width: auto;
+  z-index: 10;
   min-width: 120px;
   padding: 12px 24px;
   font-size: 1.2em;
@@ -172,46 +162,3 @@ input[type="text"] {
 #start-button:hover {
   background-color: #45a049;
 }
-
-#question-screen,
-#end-screen {
-  position: relative;
-  width: 100%;
-  min-height: 100vh;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-}
-
-#name-screen {
-  position: relative;
-  width: 100%;
-  min-height: 100vh;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-}
-
-
-
-/* Fondos diferentes para cada pantalla 
-#welcome-screen {
-  background: url("assets/fondo1.jpg") no-repeat center center fixed;
-  background-size: cover;
-}
-
-#name-screen {
-  background: url("assets/fondo2.jpg") no-repeat center center fixed;
-  background-size: cover;
-}
-
-#question-screen {
-  background: url("assets/fondo3.jpg") no-repeat center center fixed;
-  background-size: cover;
-}
-
-#end-screen {
-  background: url("assets/fondo4.jpg") no-repeat center center fixed;
-  background-size: cover;
-}
-*/
