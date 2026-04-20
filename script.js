@@ -146,33 +146,34 @@ function endGame() {
 
   // ✅ Si tuvo algún popup malo, el resultado no puede ser "excelente"
   if (hadBadPopup) {
-  message = "Tuviste errores importantes... ¡Inténtalo de nuevo!";
-  fondoFinal = "assets/fondofinalmalo.png";
-} else {
-  if (percentage <= 90) {
-    message = "Por poco mueres... ¡Inténtalo de nuevo!";
-    fondoFinal = "assets/fondofinalmalo.png";
-  } else if (percentage <= 120) {
-    message = "Has sobrevivido, pero con dificultad...";
-    fondoFinal = "assets/fondofinalmedio.png";
-  } else if (percentage <= 140) {
-    message = "Eres un gran jugador...";
-    fondoFinal = "assets/fondofinalbueno.png";
+    message = "Tuviste errores importantes... ¡Inténtalo de nuevo!";
+    fondoFinal = "assets/fondoFinalMalo.png";
   } else {
-    message = "¡Eres nuestro jugador más importante!";
-    fondoFinal = "assets/fondofinalexcelente.png";
+    // ✅ Fondo y mensaje según resultado
+    if (percentage <= 90) {
+      message = "Por poco mueres... ¡Inténtalo de nuevo!";
+      fondoFinal = "assets/fondoFinalMalo.png";
+    } else if (percentage <= 120) {
+      message = "Has sobrevivido, pero con dificultad...";
+      fondoFinal = "assets/fondoFinalMedio.png";
+    } else if (percentage <= 140) {
+      message = "Eres un gran jugador...";
+      fondoFinal = "assets/fondoFinalBueno.png";
+    } else {
+      message = "¡Eres nuestro jugador más importante!";
+      fondoFinal = "assets/fondoFinalExcelente.png";
+    }
   }
-}
 
   // ✅ Aplicar fondo elegido
   document.getElementById("end-screen").style.backgroundImage = `url("${fondoFinal}")`;
   document.getElementById("end-screen").style.backgroundSize = "cover";
   document.getElementById("end-screen").style.backgroundPosition = "center";
 
-  // ✅ Mostrar mensaje y puntaje juntos en un solo bloque
-  document.getElementById("final-message").innerText = `${message}\n${playerName}, tu puntaje final es ${percentage}`;
-  document.getElementById("final-message").style.fontSize = "2em";
-  document.getElementById("final-message").style.whiteSpace = "pre-line"; // respeta salto de línea
+  // ✅ Mostrar mensaje y puntaje
+  document.getElementById("final-message").innerText = message;
+  document.getElementById("score").innerText = `${playerName}, tu puntaje final es ${percentage}`;
+  document.getElementById("score").style.fontSize = "3em";
 
   // ✅ Guardar resultado final para administrador
   let results = JSON.parse(localStorage.getItem("gameResults")) || [];
