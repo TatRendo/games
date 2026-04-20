@@ -146,23 +146,23 @@ function endGame() {
 
   // ✅ Si tuvo algún popup malo, el resultado no puede ser "excelente"
   if (hadBadPopup) {
-    message = "Tuviste errores importantes... ¡Inténtalo de nuevo!";
+  message = "Tuviste errores importantes... ¡Inténtalo de nuevo!";
+  fondoFinal = "assets/fondofinalmalo.png";
+} else {
+  if (percentage <= 90) {
+    message = "Por poco mueres... ¡Inténtalo de nuevo!";
     fondoFinal = "assets/fondofinalmalo.png";
+  } else if (percentage <= 120) {
+    message = "Has sobrevivido, pero con dificultad...";
+    fondoFinal = "assets/fondofinalmedio.png";
+  } else if (percentage <= 140) {
+    message = "Eres un gran jugador...";
+    fondoFinal = "assets/fondofinalbueno.png";
   } else {
-    if (percentage <= 90) {
-      message = "Por poco mueres... ¡Inténtalo de nuevo!";
-      fondoFinal = "assets/fondofinalmalo.png";
-    } else if (percentage <= 120) {
-      message = "Has sobrevivido, pero con dificultad...";
-      fondoFinal = "assets/fondofinalmedio.png";
-    } else if (percentage <= 140) {
-      message = "Eres un gran jugador...";
-      fondoFinal = "assets/fondofinalbueno.png";
-    } else {
-      message = "¡Eres nuestro jugador más importante!";
-      fondoFinal = "assets/fondofinalexcelente.png";
-    }
+    message = "¡Eres nuestro jugador más importante!";
+    fondoFinal = "assets/fondofinalexcelente.png";
   }
+}
 
   // ✅ Aplicar fondo elegido
   document.getElementById("end-screen").style.backgroundImage = `url("${fondoFinal}")`;
@@ -172,7 +172,7 @@ function endGame() {
   // ✅ Mostrar mensaje y puntaje juntos en un solo bloque
   document.getElementById("final-message").innerText = `${message}\n${playerName}, tu puntaje final es ${percentage}`;
   document.getElementById("final-message").style.fontSize = "2em";
-  document.getElementById("final-message").style.whiteSpace = "pre-line";
+  document.getElementById("final-message").style.whiteSpace = "pre-line"; // respeta salto de línea
 
   // ✅ Guardar resultado final para administrador
   let results = JSON.parse(localStorage.getItem("gameResults")) || [];
