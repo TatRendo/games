@@ -54,10 +54,11 @@ input[type="text"] {
 }
 
 #character img {
-  width: 100%;
-  max-width: 250px;
-  border-radius: 10px;
+  width: 20%;
+  max-width: 100px;
+  border-radius: 5px;
 }
+
 
 /* Opciones */
 #options {
@@ -107,6 +108,7 @@ input[type="text"] {
   font-size: 24px;
   font-weight: bold;
 }
+
 
 /* Responsivo para celular */
 @media only screen and (max-width: 600px) {
