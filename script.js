@@ -120,7 +120,7 @@ function showQuestion() {
         hadBadPopup = true;
       }
       if (currentQuestion === 8) {
-        showPopup("¡Vas muy bien!", "bien");
+        showPopup("¡Estas a la mitad del camino!", "bien");
       }
       if (currentQuestion === 10 && score < 100) {
         showPopup("¡Estas medio mal, mejora!", "mal");
