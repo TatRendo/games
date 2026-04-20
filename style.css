@@ -1,7 +1,7 @@
 /* Estilo general */
 body {
   font-family: Arial, sans-serif;
-  background: url("assets/fondo1.jpg") no-repeat center center fixed;
+  background: url("assets/fondo1.png") no-repeat center center fixed; /* ✅ corregido a .png */
   background-size: cover;
   color: white;
   text-align: center;
@@ -145,7 +145,7 @@ input[type="text"] {
 /* Botón de inicio posicionado en la imagen */
 #start-button {
   position: absolute;
-  bottom: 75%;
+  bottom: 50%; /* ✅ más centrado */
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 10;
