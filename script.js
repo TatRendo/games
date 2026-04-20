@@ -2,6 +2,7 @@ let questions = [];
 let currentQuestion = 0;
 let score = 0;
 let playerName = "";
+let hadBadPopup = false; // ✅ bandera para marcar si hubo algún popup malo
 
 // ✅ Cargar preguntas desde questions.json al inicio
 async function loadQuestions() {
@@ -39,20 +40,24 @@ async function beginQuestions() {
   showQuestion();
 }
 
-// ✅ Pop-up con imagen según tipo
+// ✅ Pop-up con imagen según pregunta y tipo
 function showPopup(message, type="mal") {
   const popup = document.createElement("div");
   popup.className = "popup";
 
-  // Selecciona la imagen según el tipo
+  // Selecciona la imagen según la pregunta y el tipo
   let imageSrc = "";
-  if (type === "mal") imageSrc = "assets/popup_mal.png";
-  if (type === "bien") imageSrc = "assets/popup_bien.png";
+  if (type === "mal" && currentQuestion === 5) imageSrc = "assets/popup5_mal.png";
+  else if (type === "bien" && currentQuestion === 8) imageSrc = "assets/popup8_bien.png";
+  else if (type === "mal" && currentQuestion === 10) imageSrc = "assets/popup10_mal.png";
+  else if (type === "bien" && currentQuestion === 14) imageSrc = "assets/popup14_bien.png";
+  else if (type === "mal") imageSrc = "assets/popup_mal.png";   // genérico
+  else if (type === "bien") imageSrc = "assets/popup_bien.png"; // genérico
 
   popup.innerHTML = `
     <div class="popup-content">
       <span class="close">&times;</span>
-      ${imageSrc ? `<img src="${imageSrc}" alt="${type}" style="width:120px; margin-bottom:10px;">` : ""}
+      ${imageSrc ? `<img src="${imageSrc}" alt="${type}" style="width:200px; margin-bottom:15px;">` : ""}
       <p>${message}</p>
     </div>
   `;
@@ -112,12 +117,14 @@ function showQuestion() {
       // ✅ Pop-ups en preguntas específicas con imágenes
       if (currentQuestion === 5 && score < 30) {
         showPopup("¡Vas muy mal en las primeras preguntas!", "mal");
+        hadBadPopup = true;
       }
       if (currentQuestion === 8) {
         showPopup("¡Vas muy bien!", "bien");
       }
       if (currentQuestion === 10 && score < 100) {
-        showPopup("¡Todavía vas mal, mejora!", "mal");
+        showPopup("¡Estas medio mal, mejora!", "mal");
+        hadBadPopup = true;
       }
       if (currentQuestion === 14) {
         showPopup("¡Excelente progreso!", "bien");
@@ -137,19 +144,24 @@ function endGame() {
   let message = "";
   let fondoFinal = "";
 
-  // ✅ Fondo y mensaje según resultado
-  if (percentage <= 90) {
-    message = "Por poco mueres... ¡Inténtalo de nuevo!";
-    fondoFinal = "assets/fondoFinalMalo.png";
-  } else if (percentage <= 120) {
-    message = "Has sobrevivido, pero con dificultad...";
-    fondoFinal = "assets/fondoFinalMedio.png";
-  } else if (percentage <= 140) {
-    message = "Eres un gran jugador...";
-    fondoFinal = "assets/fondoFinalBueno.png";
+  // ✅ Si tuvo algún popup malo, el resultado no puede ser "excelente"
+  if (hadBadPopup) {
+    message = "Tuviste errores importantes... ¡Inténtalo de nuevo!";
+    fondoFinal = "assets/fondofinalmalo.png";
   } else {
-    message = "¡Eres nuestro jugador más importante!";
-    fondoFinal = "assets/fondoFinalExcelente.png";
+    if (percentage <= 90) {
+      message = "Por poco mueres... ¡Inténtalo de nuevo!";
+      fondoFinal = "assets/fondofinalmalo.png";
+    } else if (percentage <= 120) {
+      message = "Has sobrevivido, pero con dificultad...";
+      fondoFinal = "assets/fondofinalmedio.png";
+    } else if (percentage <= 140) {
+      message = "Eres un gran jugador...";
+      fondoFinal = "assets/fondofinalbueno.png";
+    } else {
+      message = "¡Eres nuestro jugador más importante!";
+      fondoFinal = "assets/fondofinalexcelente.png";
+    }
   }
 
   // ✅ Aplicar fondo elegido
@@ -157,10 +169,10 @@ function endGame() {
   document.getElementById("end-screen").style.backgroundSize = "cover";
   document.getElementById("end-screen").style.backgroundPosition = "center";
 
-  // ✅ Mostrar mensaje y puntaje
-  document.getElementById("final-message").innerText = message;
-  document.getElementById("score").innerText = `${playerName}, tu puntaje final es ${percentage}`;
-  document.getElementById("score").style.fontSize = "3em";
+  // ✅ Mostrar mensaje y puntaje juntos en un solo bloque
+  document.getElementById("final-message").innerText = `${message}\n${playerName}, tu puntaje final es ${percentage}`;
+  document.getElementById("final-message").style.fontSize = "2em";
+  document.getElementById("final-message").style.whiteSpace = "pre-line";
 
   // ✅ Guardar resultado final para administrador
   let results = JSON.parse(localStorage.getItem("gameResults")) || [];
