@@ -170,10 +170,10 @@ function endGame() {
   document.getElementById("end-screen").style.backgroundSize = "cover";
   document.getElementById("end-screen").style.backgroundPosition = "center";
 
-  // ✅ Mostrar mensaje y puntaje juntos en un solo bloque
-  document.getElementById("final-message").innerText = `${message}\n${playerName}, tu puntaje final es ${percentage}`;
-  document.getElementById("final-message").style.fontSize = "2em";
-  document.getElementById("final-message").style.whiteSpace = "pre-line"; // respeta salto de línea
+  // ✅ Mostrar mensaje y puntaje
+  document.getElementById("final-message").innerText = message;
+  document.getElementById("score").innerText = `${playerName}, tu puntaje final es ${percentage}`;
+  document.getElementById("score").style.fontSize = "3em";
 
   // ✅ Guardar resultado final para administrador
   let results = JSON.parse(localStorage.getItem("gameResults")) || [];
