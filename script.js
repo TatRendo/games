@@ -146,23 +146,24 @@ function endGame() {
 
   // ✅ Si tuvo algún popup malo, el resultado no puede ser "excelente"
   if (hadBadPopup) {
-  message = "Tuviste errores importantes... ¡Inténtalo de nuevo!";
-  fondoFinal = "assets/fondofinalmalo.png";
-} else {
-  if (percentage <= 90) {
-    message = "Por poco mueres... ¡Inténtalo de nuevo!";
+    message = "Tuviste errores importantes... ¡Inténtalo de nuevo!";
     fondoFinal = "assets/fondofinalmalo.png";
-  } else if (percentage <= 120) {
-    message = "Has sobrevivido, pero con dificultad...";
-    fondoFinal = "assets/fondofinalmedio.png";
-  } else if (percentage <= 140) {
-    message = "Eres un gran jugador...";
-    fondoFinal = "assets/fondofinalbueno.png";
   } else {
-    message = "¡Eres nuestro jugador más importante!";
-    fondoFinal = "assets/fondofinalexcelente.png";
+    // ✅ Fondo y mensaje según resultado
+    if (percentage <= 90) {
+      message = "Por poco mueres... ¡Inténtalo de nuevo!";
+      fondoFinal = "assets/fondofinalmalo.png";
+    } else if (percentage <= 120) {
+      message = "Has sobrevivido, pero con dificultad...";
+      fondoFinal = "assets/fondofinalmedio.png";
+    } else if (percentage <= 140) {
+      message = "Eres un gran jugador...";
+      fondoFinal = "assets/fondofinalbueno.png";
+    } else {
+      message = "¡Eres nuestro jugador más importante!";
+      fondoFinal = "assets/fondofinalexcelente.png";
+    }
   }
-}
 
   // ✅ Aplicar fondo elegido
   document.getElementById("end-screen").style.backgroundImage = `url("${fondoFinal}")`;
