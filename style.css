@@ -118,31 +118,21 @@ input[type="text"] {
 #name-screen,
 #question-screen,
 #end-screen {
-  position: absolute;   /* ✅ cada pantalla ocupa toda la ventana */
-  top: 0;
-  left: 0;
+  position: relative;
   width: 100%;
-  height: 100vh;
+  height: 100vh; /* ocupa toda la pantalla */
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  display: none;        /* ✅ por defecto ocultas */
+  display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  justify-content: center; /* centra verticalmente */
+  align-items: center;     /* centra horizontalmente */
   text-align: center;
-  z-index: 1;           /* ✅ encima del fondo */
+  z-index: 1; /* ✅ asegura que estén encima del fondo */
 }
 
-/* Mostrar pantalla activa */
-#welcome-screen:not(.hidden),
-#name-screen:not(.hidden),
-#question-screen:not(.hidden),
-#end-screen:not(.hidden) {
-  display: flex;        /* ✅ se muestran cuando JS quita .hidden */
-}
-
-/* Imagen de bienvenida */
+/* Pantalla de bienvenida con imagen */
 #intro-image {
   width: 100%;
   height: 100%;
@@ -150,16 +140,17 @@ input[type="text"] {
   position: absolute;
   top: 0;
   left: 0;
-  z-index: 0;           /* ✅ detrás del contenido */
+  z-index: 0;             /* ✅ detrás del contenido */
+  pointer-events: none;   /* ✅ no bloquea clics en móvil */
 }
 
 /* Botón de inicio posicionado en la imagen */
 #start-button {
   position: absolute;
-  bottom: 50%; /* ✅ más centrado */
+  bottom: 20%; /* ✅ más accesible en pantallas pequeñas */
   left: 50%;
   transform: translate(-50%, -50%);
-  z-index: 10;
+  z-index: 10; /* ✅ siempre encima de la imagen */
   min-width: 120px;
   padding: 12px 24px;
   font-size: 1.2em;
