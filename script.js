@@ -39,19 +39,15 @@ async function beginQuestions() {
   showQuestion();
 }
 
-// ✅ Pop-up con imagen según pregunta y tipo
+// ✅ Pop-up con imagen según tipo
 function showPopup(message, type="mal") {
   const popup = document.createElement("div");
   popup.className = "popup";
 
-  // Selecciona la imagen según la pregunta y el tipo
+  // Selecciona la imagen según el tipo
   let imageSrc = "";
-  if (type === "mal" && currentQuestion === 5) imageSrc = "assets/popup5_mal.png";
-  else if (type === "bien" && currentQuestion === 8) imageSrc = "assets/popup8_bien.png";
-  else if (type === "mal" && currentQuestion === 10) imageSrc = "assets/popup10_mal.png";
-  else if (type === "bien" && currentQuestion === 14) imageSrc = "assets/popup14_bien.png";
-  else if (type === "mal") imageSrc = "assets/popup_mal.png";   // genérico
-  else if (type === "bien") imageSrc = "assets/popup_bien.png"; // genérico
+  if (type === "mal") imageSrc = "assets/popup_mal.png";
+  if (type === "bien") imageSrc = "assets/popup_bien.png";
 
   popup.innerHTML = `
     <div class="popup-content">
