@@ -147,21 +147,21 @@ function endGame() {
   // ✅ Si tuvo algún popup malo, el resultado no puede ser "excelente"
   if (hadBadPopup) {
     message = "Tuviste errores importantes... ¡Inténtalo de nuevo!";
-    fondoFinal = "assets/fondofinalmalo.png";
+    fondoFinal = "assets/fondoFinalMalo.png";
   } else {
     // ✅ Fondo y mensaje según resultado
     if (percentage <= 90) {
       message = "Por poco mueres... ¡Inténtalo de nuevo!";
-      fondoFinal = "assets/fondofinalmalo.png";
+      fondoFinal = "assets/fondoFinalMalo.png";
     } else if (percentage <= 120) {
       message = "Has sobrevivido, pero con dificultad...";
-      fondoFinal = "assets/fondofinalmedio.png";
+      fondoFinal = "assets/fondoFinalMedio.png";
     } else if (percentage <= 140) {
       message = "Eres un gran jugador...";
-      fondoFinal = "assets/fondofinalbueno.png";
+      fondoFinal = "assets/fondoFinalBueno.png";
     } else {
       message = "¡Eres nuestro jugador más importante!";
-      fondoFinal = "assets/fondofinalexcelente.png";
+      fondoFinal = "assets/fondoFinalExcelente.png";
     }
   }
 
