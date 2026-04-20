@@ -1,22 +1,19 @@
 /* Estilo general */
 body {
   font-family: Arial, sans-serif;
-  background: url("assets/fondo1.png") no-repeat center center fixed; /* ✅ corregido a .png */
+  background: url("assets/fondo1.jpg") no-repeat center center fixed;
   background-size: cover;
   color: white;
   text-align: center;
   margin: 0;
   padding: 0;
-  height: 100vh; /* ocupa toda la pantalla */
-  overflow: hidden; /* evita scroll extra */
 }
 
 /* Contenedor principal */
 #game-container {
-  width: 100%;
-  height: 100vh; /* ocupa toda la pantalla */
-  margin: 0;
-  padding: 0;
+  max-width: 400px; /* tamaño ideal para celular */
+  margin: auto;
+  padding: 10px;
 }
 
 /* Ocultar pantallas */
@@ -28,9 +25,8 @@ body {
 button {
   padding: 12px;
   margin: 8px 0;
-  width: 80%;
-  max-width: 300px;
-  font-size: 1.2em;
+  width: 90%;
+  font-size: 1em;
   border: none;
   border-radius: 8px;
   background-color: #4CAF50;
@@ -63,6 +59,7 @@ input[type="text"] {
   border-radius: 5px;
 }
 
+
 /* Opciones */
 #options {
   margin-top: 20px;
@@ -75,9 +72,8 @@ input[type="text"] {
 }
 
 #score {
-  font-size: 2.5em;
+  font-size: 3em; /* Puntaje grande en el centro */
   font-weight: bold;
-  margin-top: 0;
 }
 
 /* Pop-ups flotantes */
@@ -113,44 +109,56 @@ input[type="text"] {
   font-weight: bold;
 }
 
-/* Pantallas principales: ocupan toda la pantalla */
-#welcome-screen,
-#name-screen,
-#question-screen,
-#end-screen {
-  position: relative;
-  width: 100%;
-  height: 100vh; /* ocupa toda la pantalla */
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: center; /* centra verticalmente */
-  align-items: center;     /* centra horizontalmente */
-  text-align: center;
-  z-index: 1; /* ✅ asegura que estén encima del fondo */
+
+/* Responsivo para celular */
+@media only screen and (max-width: 600px) {
+  #game-container {
+    max-width: 95%;
+  }
+
+  button {
+    font-size: 1.1em;
+  }
+
+  #score {
+    font-size: 2.5em;
+  }
+
+  .popup {
+    top: 20%;
+    left: 10%;
+    width: 80%;
+    height: 50%;
+  }
 }
 
 /* Pantalla de bienvenida con imagen */
+#welcome-screen {
+  position: relative;
+  width: 100%;
+  height: 100vh; /* ocupa toda la pantalla */
+  overflow: hidden;
+}
+
 #intro-image {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: cover; /* la imagen se ajusta sin deformarse */
   position: absolute;
   top: 0;
   left: 0;
-  z-index: 0;             /* ✅ detrás del contenido */
-  pointer-events: none;   /* ✅ no bloquea clics en móvil */
+  z-index: -1; /* queda detrás del botón */
 }
 
 /* Botón de inicio posicionado en la imagen */
 #start-button {
-  position: absolute;
-  bottom: 20%; /* ✅ más accesible en pantallas pequeñas */
-  left: 50%;
+  position: absolute;   /* se coloca encima de la imagen */
+  bottom: 75%;          /* con esto ajusto ubicacion */
+  left: 50%;            /* con esto ajusto ubicacion */
   transform: translate(-50%, -50%);
-  z-index: 10; /* ✅ siempre encima de la imagen */
+  z-index: 10;          /* asegura que esté encima de la imagen */
+
+  width: auto;
   min-width: 120px;
   padding: 12px 24px;
   font-size: 1.2em;
@@ -163,4 +171,23 @@ input[type="text"] {
 
 #start-button:hover {
   background-color: #45a049;
+}
+
+#question-screen,
+#end-screen {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+#name-screen {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
