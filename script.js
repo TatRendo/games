@@ -123,7 +123,7 @@ function showQuestion() {
         showPopup("¡Vas muy bien!", "bien");
       }
       if (currentQuestion === 10 && score < 100) {
-        showPopup("¡Estas medio mal, mejora!", "mal");
+        showPopup("¡Esta medio mal, mejora!", "mal");
         hadBadPopup = true;
       }
       if (currentQuestion === 14) {
