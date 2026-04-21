@@ -192,3 +192,6 @@ input[type="text"] {
   background-position: center;
 }
 
+#end-screen {
+  background: none; /* o algún color */
+}
