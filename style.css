@@ -192,3 +192,22 @@ input[type="text"] {
   background-position: center;
 }
 
+/* Pantalla final: ocupa toda la pantalla y muestra el fondo dinámico */
+#end-screen {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  z-index: 2; /* ✅ asegura que esté encima de todo */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+#final-message {
+  margin-top: -350px; /* mueve el texto hacia arriba */
+}
