@@ -193,19 +193,3 @@ input[type="text"] {
 }
 
 
-/* Pantalla final: asegura que el fondo dinámico se muestre */
-#end-screen {
-  position: relative;
-  width: 100%;
-  height: 100vh;              /* ocupa toda la pantalla */
-  background-repeat: no-repeat;
-  background-size: cover;     /* ✅ ajusta la imagen al tamaño */
-  background-position: center;
-  z-index: 2;                 /* ✅ encima de otras capas */
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start; /* ✅ coloca texto arriba */
-  align-items: center;
-  text-align: center;
-  padding-top: 80px;           /* espacio desde arriba */
-}
