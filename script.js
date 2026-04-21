@@ -164,6 +164,9 @@ function endGame() {
   }
 }
 
+
+  console.log("Fondo final aplicado:", fondoFinal);
+
   // ✅ Aplicar fondo elegido
   document.getElementById("end-screen").style.backgroundImage = `url("${fondoFinal}")`;
   document.getElementById("end-screen").style.backgroundSize = "cover";
