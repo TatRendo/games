@@ -1,74 +1,74 @@
 [
-  { "text": "Pregunta 1: ¿Cuál es la capital de Colombia?", "options": [
-    {"text": "Bogotá", "correct": true},
-    {"text": "Medellín", "correct": false},
-    {"text": "Cali", "correct": false}
+  { "text": "Pregunta 1: Metatitane Syndet es:", "options": [
+    {"text": "Un jabón suave Syndet", "correct": false},
+    {"text": "Un exfoliante Syndet", "correct": false},
+    {"text": "Un dermolimpiador Syndet", "correct": true}
   ]},
-  { "text": "Pregunta 2: ¿Cuál es 2+2?", "options": [
-    {"text": "3", "correct": false},
-    {"text": "4", "correct": true},
-    {"text": "5", "correct": false}
+  { "text": "Pregunta 2: La principal diferencia frente a un jabón es:", "options": [
+    {"text": "Hace más espuma", "correct": false},
+    {"text": "Limpia sin resecar", "correct": true},
+    {"text": "No tiene fragancia", "correct": false}
   ]},
-  { "text": "Pregunta 3: ¿Cuál es el océano más grande?", "options": [
-    {"text": "Atlántico", "correct": false},
-    {"text": "Pacífico", "correct": true},
-    {"text": "Índico", "correct": false}
+  { "text": "Pregunta 3: Metatitane Syndet está diseñado para:", "options": [
+    {"text": "Limpiar profundamente", "correct": false},
+    {"text": "Respetar la piel", "correct": true},
+    {"text": "Hidratar mejor la piel", "correct": false}
   ]},
   { "text": "Pregunta 4: ¿Ya sigues nuestra cuenta oficial de Metaclor en Instagram?", "options": [
     {"text": "Sí", "correct": true},
     {"text": "No", "correct": false, "link": "https://instagram.com/metaclor"}
   ]},
-  { "text": "Pregunta 5: ¿Cuál es el planeta más cercano al sol?", "options": [
-    {"text": "Mercurio", "correct": true},
-    {"text": "Venus", "correct": false},
-    {"text": "Marte", "correct": false}
+  { "text": "Pregunta 5: ¿Qué ayuda a mantener?", "options": [
+    {"text": "Equilibrio natural de la piel", "correct": true},
+    {"text": "La Hidratación de la piel", "correct": false},
+    {"text": "La Elasticidad natural de la piel", "correct": false}
   ]},
-  { "text": "Pregunta 6: ¿Cuál es el río más largo del mundo?", "options": [
-    {"text": "Amazonas", "correct": true},
-    {"text": "Nilo", "correct": false},
-    {"text": "Yangtsé", "correct": false}
+  { "text": "Pregunta 6: ¿Qué ingrediente potencia el cuidado?", "options": [
+    {"text": "Acetato de aluminio", "correct": true},
+    {"text": "Vitamina C", "correct": false},
+    {"text": "Ácido salicílico", "correct": false}
   ]},
-  { "text": "Pregunta 7: ¿Cuál es el animal terrestre más rápido?", "options": [
-    {"text": "León", "correct": false},
-    {"text": "Guepardo", "correct": true},
-    {"text": "Caballo", "correct": false}
+  { "text": "Pregunta 7: La limpieza principal del Syndet es:", "options": [
+    {"text": "Hidratante", "correct": false},
+    {"text": "Suave", "correct": true},
+    {"text": "Espumosa", "correct": false}
   ]},
-  { "text": "Pregunta 8: ¿Cuál es el metal más ligero?", "options": [
-    {"text": "Hierro", "correct": false},
-    {"text": "Litio", "correct": true},
-    {"text": "Aluminio", "correct": false}
+  { "text": "Pregunta 8: ¿En qué momento está nuestra marca Metatitane Syndet hoy?", "options": [
+    {"text": "Cuando la piel lo necesita", "correct": false},
+    {"text": "En el primer paso", "correct": true},
+    {"text": "Durante del cuidado diario", "correct": false}
   ]},
   { "text": "Pregunta 9: ¿Ya sigues nuestra cuenta oficial de Metatitane en Instagram?", "options": [
     {"text": "Sí", "correct": true},
     {"text": "No", "correct": false, "link": "https://instagram.com/metatitane"}
   ]},
-  { "text": "Pregunta 10: ¿Cuál es el continente con más países?", "options": [
-    {"text": "África", "correct": true},
-    {"text": "Asia", "correct": false},
-    {"text": "Europa", "correct": false}
+  { "text": "Pregunta 10: Completa: No todo lo que limpia…", "options": [
+    {"text": "Cuida", "correct": true},
+    {"text": "Protege", "correct": false},
+    {"text": "Hidrata", "correct": false}
   ]},
-  { "text": "Pregunta 11: ¿Cuál es el idioma más hablado en el mundo?", "options": [
-    {"text": "Inglés", "correct": false},
-    {"text": "Mandarín", "correct": true},
-    {"text": "Español", "correct": false}
+  { "text": "Pregunta 11: Antes nuestra marca Metatitane estaba en momentos difíciles de la piel, hoy:", "options": [
+    {"text": "Limpia la piel", "correct": false},
+    {"text": "La cuida todos los días", "correct": true},
+    {"text": "Mantiene el equilibrio de la piel", "correct": false}
   ]},
-  { "text": "Pregunta 12: ¿Cuál es el país más grande del mundo?", "options": [
-    {"text": "China", "correct": false},
-    {"text": "Rusia", "correct": true},
-    {"text": "Canadá", "correct": false}
+  { "text": "Pregunta 12: Su beneficio clave es:", "options": [
+    {"text": "Limpiar dejando sensación de suavidad", "correct": false},
+    {"text": "Limpiar respetando el equilibrio de la piel", "correct": true},
+    {"text": "Limpiar ayudando a purificar la piel", "correct": false}
   ]},
   { "text": "Pregunta 13: ¿Ya sigues nuestra página oficial del Laboratorio en Facebook?", "options": [
     {"text": "Sí", "correct": true},
     {"text": "No", "correct": false, "link": "https://www.facebook.com/LaboratoriosRemo?rdid=DPT8CkObDueB5OLb&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1C9VvVDytS%2F#"}
   ]},
-  { "text": "Pregunta 14: ¿Cuál es el país con más población?", "options": [
-    {"text": "India", "correct": true},
-    {"text": "China", "correct": false},
-    {"text": "EE.UU.", "correct": false}
+  { "text": "Pregunta 14: ¿Qué NO hace el Syndet?", "options": [
+    {"text": "Resecar la piel", "correct": true},
+    {"text": "Limpiar", "correct": false},
+    {"text": "Generar espuma", "correct": false}
   ]},
-  { "text": "Pregunta 15: ¿Cuál es el continente más pequeño?", "options": [
-    {"text": "Oceanía", "correct": true},
-    {"text": "Europa", "correct": false},
-    {"text": "Antártida", "correct": false}
+  { "text": "Pregunta 15: Metatitane Syndet representa:", "options": [
+    {"text": "Una nueva etapa del cuidado", "correct": true},
+    {"text": "Un nuevo producto", "correct": false},
+    {"text": "Un cambio de imagen", "correct": false}
   ]}
 ]
