@@ -1,6 +1,8 @@
 /* Estilo general */
 body {
   font-family: Arial, sans-serif;
+  background: url("assets/fondo1.jpg") no-repeat center center fixed;
+  background-size: cover;
   color: white;
   text-align: center;
   margin: 0;
@@ -57,6 +59,7 @@ input[type="text"] {
   border-radius: 5px;
 }
 
+
 /* Opciones */
 #options {
   margin-top: 20px;
@@ -69,7 +72,7 @@ input[type="text"] {
 }
 
 #score {
-  font-size: 3em;
+  font-size: 3em; /* Puntaje grande en el centro */
   font-weight: bold;
 }
 
@@ -106,6 +109,7 @@ input[type="text"] {
   font-weight: bold;
 }
 
+
 /* Responsivo para celular */
 @media only screen and (max-width: 600px) {
   #game-container {
@@ -128,31 +132,33 @@ input[type="text"] {
   }
 }
 
-/* Pantalla de bienvenida */
+/* Pantalla de bienvenida con imagen */
 #welcome-screen {
   position: relative;
   width: 100%;
-  height: 100vh;
+  height: 100vh; /* ocupa toda la pantalla */
   overflow: hidden;
 }
 
 #intro-image {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: cover; /* la imagen se ajusta sin deformarse */
   position: absolute;
   top: 0;
   left: 0;
-  z-index: -1;
+  z-index: -1; /* queda detrás del botón */
 }
 
-/* Botón de inicio */
+/* Botón de inicio posicionado en la imagen */
 #start-button {
-  position: absolute;
-  bottom: 75%;
-  left: 50%;
+  position: absolute;   /* se coloca encima de la imagen */
+  bottom: 75%;          /* con esto ajusto ubicacion */
+  left: 50%;            /* con esto ajusto ubicacion */
   transform: translate(-50%, -50%);
-  z-index: 10;
+  z-index: 10;          /* asegura que esté encima de la imagen */
+
+  width: auto;
   min-width: 120px;
   padding: 12px 24px;
   font-size: 1.2em;
@@ -167,9 +173,16 @@ input[type="text"] {
   background-color: #280aad;
 }
 
-/* Pantallas principales */
 #question-screen,
-#end-screen,
+#end-screen {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
 #name-screen {
   position: relative;
   width: 100%;
@@ -179,12 +192,6 @@ input[type="text"] {
   background-position: center;
 }
 
-/* Pantalla final limpia */
 #end-screen {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-  text-align: center;
-  padding-top: 80px;
+  background: none; /* se elimina si n o funciona */
 }
