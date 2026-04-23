@@ -20,7 +20,7 @@ function startGame() {
   document.getElementById("name-screen").classList.remove("hidden");
 
   // ✅ Fondo especial para la pantalla de nombre
-  document.getElementById("name-screen").style.backgroundImage = 'url("assets/usuario.png")';
+  document.getElementById("name-screen").style.backgroundImage = 'url("./assets/usuario.png")';
   document.getElementById("name-screen").style.backgroundSize = "cover";
   document.getElementById("name-screen").style.backgroundPosition = "center";
 }
@@ -47,12 +47,12 @@ function showPopup(message, type="mal") {
 
   // Selecciona la imagen según la pregunta y el tipo
   let imageSrc = "";
-  if (type === "mal" && currentQuestion === 5) imageSrc = "assets/popup5_mal.png";
-  else if (type === "bien" && currentQuestion === 8) imageSrc = "assets/popup8_bien.png";
-  else if (type === "mal" && currentQuestion === 10) imageSrc = "assets/popup10_mal.png";
-  else if (type === "bien" && currentQuestion === 14) imageSrc = "assets/popup14_bien.png";
-  else if (type === "mal") imageSrc = "assets/popup_mal.png";   // genérico
-  else if (type === "bien") imageSrc = "assets/popup_bien.png"; // genérico
+  if (type === "mal" && currentQuestion === 5) imageSrc = "./assets/popup5_mal.png";
+  else if (type === "bien" && currentQuestion === 8) imageSrc = "./assets/popup8_bien.png";
+  else if (type === "mal" && currentQuestion === 10) imageSrc = "./assets/popup10_mal.png";
+  else if (type === "bien" && currentQuestion === 14) imageSrc = "./assets/popup14_bien.png";
+  else if (type === "mal") imageSrc = "./assets/popup_mal.png";   // genérico
+  else if (type === "bien") imageSrc = "./assets/popup_bien.png"; // genérico
 
   popup.innerHTML = `
     <div class="popup-content">
@@ -75,7 +75,7 @@ function showQuestion() {
 
   // ✅ Cambiar fondo cada 5 preguntas (usa formato .png)
   let fondoIndex = Math.floor(currentQuestion / 5) + 1;
-  document.getElementById("question-screen").style.backgroundImage = `url("assets/fondo${fondoIndex}.png")`;
+  document.getElementById("question-screen").style.backgroundImage = `url("./assets/fondo${fondoIndex}.png")`;
   document.getElementById("question-screen").style.backgroundSize = "cover";
   document.getElementById("question-screen").style.backgroundPosition = "center";
 
@@ -146,24 +146,26 @@ function endGame() {
 
   // ✅ Si tuvo algún popup malo, el resultado no puede ser "excelente"
   if (hadBadPopup) {
-  message = "Tuviste errores importantes... ¡Inténtalo de nuevo!";
-  fondoFinal = "assets/fondofinalmalo.png";
-} else {
-  if (percentage <= 90) {
-    message = "Por poco mueres... ¡Inténtalo de nuevo!";
-    fondoFinal = "assets/fondofinalmalo.png";
-  } else if (percentage <= 120) {
-    message = "Has sobrevivido, pero con dificultad...";
-    fondoFinal = "assets/fondofinalmedio.png";
-  } else if (percentage <= 140) {
-    message = "Eres un gran jugador...";
-    fondoFinal = "assets/fondofinalbueno.png";
+    message = "Tuviste errores importantes... ¡Inténtalo de nuevo!";
+    fondoFinal = "./assets/fondofinalmalo.png";
   } else {
-    message = "¡Eres nuestro jugador más importante!";
-    fondoFinal = "assets/fondofinalexcelente.png";
+    if (percentage <= 90) {
+      message = "Por poco mueres... ¡Inténtalo de nuevo!";
+      fondoFinal = "./assets/fondofinalmalo.png";
+    } else if (percentage <= 120) {
+      message = "Has sobrevivido, pero con dificultad...";
+      fondoFinal = "./assets/fondofinalmedio.png";
+    } else if (percentage <= 140) {
+      message = "Eres un gran jugador...";
+      fondoFinal = "./assets/fondofinalbueno.png";
+    } else {
+      message = "¡Eres nuestro jugador más importante!";
+      fondoFinal = "./assets/fondofinalexcelente.png";
+    }
   }
-}
-    // ✅ Aplicar fondo elegido
+
+  // ✅ Aplicar fondo elegido
+  console.log("Fondo final aplicado:", fondoFinal);
   document.getElementById("end-screen").style.backgroundImage = `url("${fondoFinal}")`;
   document.getElementById("end-screen").style.backgroundSize = "cover";
   document.getElementById("end-screen").style.backgroundPosition = "center";
