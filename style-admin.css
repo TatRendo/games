@@ -3,7 +3,7 @@ body {
   margin: 0;
   padding: 0;
   font-family: Arial, sans-serif;
-  background: url("assets/235203.png") no-repeat center center fixed;
+  background: url("assets/pantallaadmin.png") no-repeat center center fixed;
   background-size: cover;   /* ocupa toda la pantalla */
   color: white;           /* texto legible sobre fondo */
 }
