@@ -36,7 +36,7 @@
   { "text": "Pregunta 8: ¿En qué momento está nuestra marca Metatitane Syndet hoy?", "options": [
     {"text": "Cuando la piel lo necesita", "correct": false},
     {"text": "En el primer paso", "correct": true},
-    {"text": "Durante del cuidado diario", "correct": false}
+    {"text": "Durante el cuidado diario", "correct": false}
   ]},
   { "text": "Pregunta 9: ¿Ya sigues nuestra cuenta oficial de Metatitane en Instagram?", "options": [
     {"text": "Sí", "correct": true},
@@ -57,9 +57,9 @@
     {"text": "Limpiar respetando el equilibrio de la piel", "correct": true},
     {"text": "Limpiar ayudando a purificar la piel", "correct": false}
   ]},
-  { "text": "Pregunta 13: ¿Ya sigues nuestra página oficial del Laboratorio en Facebook?", "options": [
+  { "text": "Pregunta 13: ¿Ya compartiste nuestra cuenta oficial de Metatitane a 5 personas?", "options": [
     {"text": "Sí", "correct": true},
-    {"text": "No", "correct": false, "link": "https://www.facebook.com/LaboratoriosRemo?rdid=DPT8CkObDueB5OLb&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1C9VvVDytS%2F#"}
+    {"text": "No", "correct": false, "link": "https://instagram.com/metatitane"}
   ]},
   { "text": "Pregunta 14: ¿Qué NO hace el Syndet?", "options": [
     {"text": "Resecar la piel", "correct": true},
