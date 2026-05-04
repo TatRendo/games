@@ -50,7 +50,7 @@ function showPopup(message, type="mal") {
   if (type === "mal" && currentQuestion === 5) imageSrc = "./assets/popup5_mal.png";
   else if (type === "bien" && currentQuestion === 8) imageSrc = "./assets/popup8_bien.png";
   else if (type === "mal" && currentQuestion === 10) imageSrc = "./assets/popup10_mal.png";
-  else if (type === "bien" && currentQuestion === 14) imageSrc = "./assets/popup14_bien.png";
+  else if (type === "bien" && currentQuestion === 11) imageSrc = "./assets/popup14_bien.png";
   else if (type === "mal") imageSrc = "./assets/popup_mal.png";   // genérico
   else if (type === "bien") imageSrc = "./assets/popup_bien.png"; // genérico
 
@@ -100,7 +100,7 @@ function showQuestion() {
       currentQuestion++;
 
       // ✅ Guardar progreso parcial en localStorage
-      let partialPercentage = Math.round((score / (questions.length * 10)) * 150);
+      let partialPercentage = Math.round((score / (questions.length * 10)) * 120);
       let results = JSON.parse(localStorage.getItem("gameResults")) || [];
 
       // Buscar si ya existe un registro para este jugador
@@ -122,11 +122,11 @@ function showQuestion() {
       if (currentQuestion === 8) {
         showPopup("¡Estas a la mitad del camino!", "bien");
       }
-      if (currentQuestion === 10 && score < 100) {
+      if (currentQuestion === 10 && score < 70) {
         showPopup("¡Estas medio mal, mejora!", "mal");
         hadBadPopup = true;
       }
-      if (currentQuestion === 14) {
+      if (currentQuestion === 11) {
         showPopup("¡Excelente progreso!", "bien");
       }
 
@@ -140,7 +140,7 @@ function endGame() {
   document.getElementById("question-screen").classList.add("hidden");
   document.getElementById("end-screen").classList.remove("hidden");
 
-  let percentage = Math.round((score / (questions.length * 10)) * 150);
+  let percentage = Math.round((score / (questions.length * 10)) * 120);
   let message = "";
   let fondoFinal = "";
 
@@ -152,10 +152,10 @@ function endGame() {
     if (percentage <= 90) {
       message = "Por poco mueres... ¡Inténtalo de nuevo!";
       fondoFinal = "./assets/fondofinalmalo.png";
-    } else if (percentage <= 120) {
+    } else if (percentage <= 100) {
       message = "Has sobrevivido, pero con dificultad...";
       fondoFinal = "./assets/fondofinalmedio.png";
-    } else if (percentage <= 140) {
+    } else if (percentage <= 110) {
       message = "Eres un gran jugador...";
       fondoFinal = "./assets/fondofinalbueno.png";
     } else {

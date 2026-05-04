@@ -9,64 +9,49 @@
     {"text": "Limpia sin resecar", "correct": true},
     {"text": "No tiene fragancia", "correct": false}
   ]},
-  { "text": "Pregunta 3: Metatitane Syndet está diseñado para:", "options": [
-    {"text": "Limpiar profundamente", "correct": false},
-    {"text": "Respetar la piel", "correct": true},
-    {"text": "Hidratar mejor la piel", "correct": false}
-  ]},
-  { "text": "Pregunta 4: ¿Ya sigues nuestra cuenta oficial de Metaclor en Instagram?", "options": [
+    { "text": "Pregunta 3: ¿Ya sigues nuestra cuenta oficial de Metaclor en Instagram?", "options": [
     {"text": "Sí", "correct": true},
     {"text": "No", "correct": false, "link": "https://instagram.com/metaclor"}
   ]},
-  { "text": "Pregunta 5: ¿Qué ayuda a mantener?", "options": [
+  { "text": "Pregunta 4: ¿Qué ayuda a mantener?", "options": [
     {"text": "Equilibrio natural de la piel", "correct": true},
     {"text": "La Hidratación de la piel", "correct": false},
     {"text": "La Elasticidad natural de la piel", "correct": false}
   ]},
-  { "text": "Pregunta 6: ¿Qué ingrediente potencia el cuidado?", "options": [
+  { "text": "Pregunta 5: ¿Qué ingrediente potencia el cuidado?", "options": [
     {"text": "Acetato de aluminio", "correct": true},
     {"text": "Vitamina C", "correct": false},
     {"text": "Ácido salicílico", "correct": false}
   ]},
-  { "text": "Pregunta 7: La limpieza principal del Syndet es:", "options": [
-    {"text": "Hidratante", "correct": false},
-    {"text": "Suave", "correct": true},
-    {"text": "Espumosa", "correct": false}
-  ]},
-  { "text": "Pregunta 8: ¿En qué momento está nuestra marca Metatitane Syndet hoy?", "options": [
+    { "text": "Pregunta 6: ¿En qué momento está nuestra marca Metatitane Syndet hoy?", "options": [
     {"text": "Cuando la piel lo necesita", "correct": false},
     {"text": "En el primer paso", "correct": true},
     {"text": "Durante el cuidado diario", "correct": false}
   ]},
-  { "text": "Pregunta 9: ¿Ya sigues nuestra cuenta oficial de Metatitane en Instagram?", "options": [
+  { "text": "Pregunta 7: ¿Ya sigues nuestra cuenta oficial de Metatitane en Instagram?", "options": [
     {"text": "Sí", "correct": true},
     {"text": "No", "correct": false, "link": "https://instagram.com/metatitane"}
   ]},
-  { "text": "Pregunta 10: Completa: No todo lo que limpia…", "options": [
+  { "text": "Pregunta 8: Completa: No todo lo que limpia…", "options": [
     {"text": "Cuida", "correct": true},
     {"text": "Protege", "correct": false},
     {"text": "Hidrata", "correct": false}
   ]},
-  { "text": "Pregunta 11: Antes nuestra marca Metatitane estaba en momentos difíciles de la piel, hoy:", "options": [
+  { "text": "Pregunta 9: Antes nuestra marca Metatitane estaba en momentos difíciles de la piel, hoy:", "options": [
     {"text": "Limpia la piel", "correct": false},
     {"text": "La cuida todos los días", "correct": true},
     {"text": "Mantiene el equilibrio de la piel", "correct": false}
   ]},
-  { "text": "Pregunta 12: Su beneficio clave es:", "options": [
-    {"text": "Limpiar dejando sensación de suavidad", "correct": false},
-    {"text": "Limpiar respetando el equilibrio de la piel", "correct": true},
-    {"text": "Limpiar ayudando a purificar la piel", "correct": false}
-  ]},
-  { "text": "Pregunta 13: ¿Ya compartiste nuestra cuenta oficial de Metatitane a 5 personas?", "options": [
+    { "text": "Pregunta 10: ¿Ya compartiste nuestra cuenta oficial de Metatitane a 5 personas?", "options": [
     {"text": "Sí", "correct": true},
     {"text": "No", "correct": false, "link": "https://instagram.com/metatitane"}
   ]},
-  { "text": "Pregunta 14: ¿Qué NO hace el Syndet?", "options": [
+  { "text": "Pregunta 11: ¿Qué NO hace el Syndet?", "options": [
     {"text": "Resecar la piel", "correct": true},
     {"text": "Limpiar", "correct": false},
     {"text": "Generar espuma", "correct": false}
   ]},
-  { "text": "Pregunta 15: Metatitane Syndet representa:", "options": [
+  { "text": "Pregunta 12: Metatitane Syndet representa:", "options": [
     {"text": "Una nueva etapa del cuidado", "correct": true},
     {"text": "Un nuevo producto", "correct": false},
     {"text": "Un cambio de imagen", "correct": false}
